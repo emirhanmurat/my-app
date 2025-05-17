@@ -2,7 +2,7 @@
 FROM node:18
 
 # Çalışma dizinini oluştur
-WORKDIR /app
+WORKDIR /my-app
 
 
 COPY index.js .
