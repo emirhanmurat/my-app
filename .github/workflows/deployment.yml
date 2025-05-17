@@ -19,8 +19,8 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          mkdir /home/ec2-user/my-app
-          cd /home/ec2-user/my-app
+          mkdir /home/ubuntu/my-app
+          cd /home/ubuntu/my-app
           git clone https://github.com/emirhanmurat/my-app.git .
           docker build -t my-app .
           docker stop my-app || true && docker rm my-app || true
