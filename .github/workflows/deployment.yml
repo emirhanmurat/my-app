@@ -19,6 +19,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
+          rm -rf /home/ubuntu/my-app
           mkdir /home/ubuntu/my-app
           cd /home/ubuntu/my-app
           git clone https://github.com/emirhanmurat/my-app.git .
