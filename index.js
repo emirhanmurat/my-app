@@ -79,7 +79,7 @@ app.delete('/airline/:id/', authenticateToken, (req, res) => {
 // Aircrafts CRUD
 app.post('/aircraft/', authenticateToken, (req, res) => {
   const { manufacturer_serial_number, type, model, operator_airline, number_of_engines } = req.body;
-  if (!operator_airline) return res.status(400).json({ operator_airline: ['This field may not be null...'] });
+  if (!operator_airline) return res.status(400).json({ operator_airline: ['This field may not be null.'] });
   if (aircrafts.find(a => a.manufacturer_serial_number === manufacturer_serial_number)) return res.status(400).json({ error: 'UNIQUE constraint failed: airlines_aircraft.manufacturer_serial_number' });
 
   const aircraft = { id: aircrafts.length + 1, manufacturer_serial_number, type, model, operator_airline, number_of_engines };
