@@ -99,7 +99,7 @@ app.get('/aircraft/:id', authenticateToken, (req, res) => {
 
 app.patch('/aircraft/:id/', authenticateToken, (req, res) => {
   const aircraft = aircrafts.find(a => a.id == req.params.id);
-  if (!aircraft) return res.status(404).json({ error: 'Not found' });
+  if (!aircraft) return res.status(404).json({ error: 'Not found...' });
 
   const { manufacturer_serial_number } = req.body;
   if (manufacturer_serial_number && aircrafts.find(a => a.manufacturer_serial_number === manufacturer_serial_number && a.id != aircraft.id)) {
